@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.burningfriday.getyourpokemon.LaunchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.burningfriday.getyourpokemon.LaunchActivity">
+
+        <Button
+            android:id="@+id/btn_sample_aac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample AAC"
+            android:onClick="@{() -> viewModel.onClickSampleAAC()}"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sample_compose" />
+
+        <Button
+            android:id="@+id/btn_sample_compose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sample Compose"
+            android:onClick="@{() -> viewModel.onClickSampleCompose()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sample_aac"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,4 +1,4 @@
-package com.android.getyourpokemon.ui.theme
+package com.burningfriday.getyourpokemon.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
