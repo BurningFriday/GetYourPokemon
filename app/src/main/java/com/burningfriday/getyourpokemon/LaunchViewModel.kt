@@ -9,7 +9,7 @@ class LaunchViewModel : BaseViewModel() {
 
     fun onClickSampleAAC() {
         invokeEvent(
-            LaunchEvent.OnClickSampleCompose
+            LaunchEvent.OnClickSampleAAC
         )
     }
 
