@@ -1,6 +1,6 @@
 package com.burningfriday.getyourpokemon.network.repository
 
-import com.burningfriday.getyourpokemon.network.PokemonRetrofitFactory
+import com.burningfriday.getyourpokemon.network.api.PokemonRetrofitFactory
 import com.burningfriday.getyourpokemon.network.api.model.PokemonInfo
 import com.burningfriday.getyourpokemon.network.api.request.PokemonService
 import com.burningfriday.getyourpokemon.network.api.response.PokemonResponse

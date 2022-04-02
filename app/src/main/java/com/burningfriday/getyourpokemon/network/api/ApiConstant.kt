@@ -1,4 +1,4 @@
-package com.burningfriday.getyourpokemon.network
+package com.burningfriday.getyourpokemon.network.api
 
 /**
  * @author Hyunwoo Choi
