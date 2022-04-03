@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.lifecycleScope
 import com.android.getyourpokemon.R
 import com.android.getyourpokemon.databinding.ActivityLaunchBinding
+import com.burningfriday.getyourpokemon.common.Event
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 /**
  * @author Hyunwoo Choi
@@ -25,17 +29,20 @@ class LaunchActivity : AppCompatActivity() {
     }
 
     private fun initObservers() {
-        viewModel.event.observe(this) { eventWrapper ->
-            val event = eventWrapper.peekContent() as? LaunchEvent ?: return@observe
-            when(event) {
-                LaunchEvent.OnClickSampleAAC -> {
-                    startActivity(Intent(this, ModernListActivity::class.java))
-                }
+        lifecycleScope.launch {
+            viewModel.event.collect { handleEvent(it) }
+        }
+    }
 
-                LaunchEvent.OnClickSampleCompose -> {
-                    startActivity(Intent(this, ComposeListActivity::class.java))
-                }
+    private fun handleEvent(event: Event) {
+        when(event) {
+            is LaunchEvent.OnClickSampleAAC -> {
+                startActivity(Intent(this, ModernListActivity::class.java))
             }
+            is LaunchEvent.OnClickSampleCompose -> {
+                startActivity(Intent(this, ComposeListActivity::class.java))
+            }
+            else -> {}
         }
     }
 

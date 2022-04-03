@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.android.getyourpokemon.R
 import com.android.getyourpokemon.databinding.ActivityModernListBinding
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class ModernListActivity : AppCompatActivity() {
 
@@ -17,12 +19,15 @@ class ModernListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_modern_list)
         binding.viewModel = viewModel
+
         initObservers()
     }
 
     private fun initObservers() {
-        viewModel.event.observe(this) {
-            // do something
+        lifecycleScope.launch {
+            viewModel.event.collect {
+                // do something
+            }
         }
     }
 
