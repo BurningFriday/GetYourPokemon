@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GetYourPokemon">
         <activity
-            android:name=".MainActivity"
+            android:name="com.burningfriday.getyourpokemon.LaunchActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GetYourPokemon.NoActionBar">
@@ -20,6 +20,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.burningfriday.getyourpokemon.ComposeListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GetYourPokemon.NoActionBar" />
+
+        <activity
+            android:name="com.burningfriday.getyourpokemon.ModernListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.GetYourPokemon.NoActionBar" />
+
     </application>
 
 </manifest>

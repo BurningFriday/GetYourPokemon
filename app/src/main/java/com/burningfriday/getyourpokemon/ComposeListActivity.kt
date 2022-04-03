@@ -1,4 +1,4 @@
-package com.android.getyourpokemon
+package com.burningfriday.getyourpokemon
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,9 +8,12 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.android.getyourpokemon.ui.theme.GetYourPokemonTheme
+import com.burningfriday.getyourpokemon.ui.theme.GetYourPokemonTheme
 
-class MainActivity : ComponentActivity() {
+/**
+ * @author Hyunwoo Choi
+ */
+class ComposeListActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
