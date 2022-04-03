@@ -5,7 +5,7 @@ import com.burningfriday.getyourpokemon.common.Event
 /**
  * @author Hyunwoo Choi
  */
-enum class LaunchEvent : Event {
-    OnClickSampleAAC,
-    OnClickSampleCompose,
+sealed class LaunchEvent : Event {
+    object OnClickSampleAAC : LaunchEvent()
+    object OnClickSampleCompose : LaunchEvent()
 }
