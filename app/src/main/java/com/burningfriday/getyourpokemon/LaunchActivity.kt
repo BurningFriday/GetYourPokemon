@@ -9,12 +9,14 @@ import androidx.lifecycle.lifecycleScope
 import com.android.getyourpokemon.R
 import com.android.getyourpokemon.databinding.ActivityLaunchBinding
 import com.burningfriday.getyourpokemon.common.Event
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 /**
  * @author Hyunwoo Choi
  */
+@AndroidEntryPoint
 class LaunchActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLaunchBinding

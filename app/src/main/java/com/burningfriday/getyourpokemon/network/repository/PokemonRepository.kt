@@ -1,5 +1,6 @@
 package com.burningfriday.getyourpokemon.network.repository
 
+import android.util.Log
 import com.burningfriday.getyourpokemon.network.api.PokemonRetrofitFactory
 import com.burningfriday.getyourpokemon.network.api.model.PokemonInfo
 import com.burningfriday.getyourpokemon.network.api.request.PokemonService
