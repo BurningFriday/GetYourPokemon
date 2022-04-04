@@ -1,4 +1,4 @@
-package com.burningfriday.getyourpokemon
+package com.burningfriday.getyourpokemon.modern.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -49,6 +49,7 @@ class ModernListActivity : AppCompatActivity() {
                 viewModel.pokemonList.collect {
                     // collect Response
                     listAdapter.submitList(it)
+
                 }
             }
         }

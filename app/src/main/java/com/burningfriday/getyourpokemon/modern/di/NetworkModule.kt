@@ -1,8 +1,11 @@
 package com.burningfriday.getyourpokemon.modern.di
 
+import com.burningfriday.getyourpokemon.modern.data.repository.PokemonRepository
+import com.burningfriday.getyourpokemon.modern.data.repository.impl.PokemonRepositoryImpl
+import com.burningfriday.getyourpokemon.modern.data.service.PokemonService
 import com.burningfriday.getyourpokemon.network.api.ApiConstant
-import com.burningfriday.getyourpokemon.network.api.request.PokemonService
 import com.google.gson.GsonBuilder
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +17,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 @Module
 @InstallIn(ViewModelComponent::class)
 abstract class NetworkModule {
+
+    @Binds
+    @ViewModelScoped
+    abstract fun bindPokemonRepository(pokemonRepositoryImpl: PokemonRepositoryImpl): PokemonRepository
 
     companion object {
         @Provides
