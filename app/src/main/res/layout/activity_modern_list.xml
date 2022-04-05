@@ -7,17 +7,17 @@
 
         <variable
             name="viewModel"
-            type="com.burningfriday.getyourpokemon.ModernListViewModel" />
+            type="com.burningfriday.getyourpokemon.modern.presenter.ModernListViewModel" />
 
         <variable
             name="adapter"
-            type="com.burningfriday.getyourpokemon.ModernListAdapter" />
+            type="com.burningfriday.getyourpokemon.modern.presenter.ModernListAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.burningfriday.getyourpokemon.ModernListActivity">
+        tools:context="com.burningfriday.getyourpokemon.modern.presenter.ModernListActivity">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"

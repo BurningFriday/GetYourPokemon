@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.android.getyourpokemon.R
 import com.android.getyourpokemon.databinding.ActivityLaunchBinding
 import com.burningfriday.getyourpokemon.common.Event
+import com.burningfriday.getyourpokemon.modern.presenter.ModernListActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.burningfriday.getyourpokemon
+package com.burningfriday.getyourpokemon.modern.presenter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
