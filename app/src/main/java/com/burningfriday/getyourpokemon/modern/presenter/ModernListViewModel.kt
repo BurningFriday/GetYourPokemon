@@ -2,6 +2,7 @@ package com.burningfriday.getyourpokemon.modern.presenter
 
 import androidx.lifecycle.viewModelScope
 import com.burningfriday.getyourpokemon.common.BaseViewModel
+import com.burningfriday.getyourpokemon.common.provider.ToastProvider
 import com.burningfriday.getyourpokemon.modern.domain.PokemonListUseCase
 import com.burningfriday.getyourpokemon.network.api.model.Pokemon
 import com.burningfriday.getyourpokemon.network.repository.PokemonRepository
@@ -12,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ModernListViewModel @Inject constructor(
-    private val pokemonListUseCase: PokemonListUseCase
+    private val pokemonListUseCase: PokemonListUseCase,
+    private val toastProvider: ToastProvider
 ) : BaseViewModel() {
 
 //    private var pokemonRepository: PokemonRepository = PokemonRepository()
@@ -27,6 +29,7 @@ class ModernListViewModel @Inject constructor(
     fun fetchPokemonList(limit: Int, offset: Int) {
         viewModelScope.launch {
             _pokemonList.emit(pokemonListUseCase(PokemonListUseCase.Params(limit, offset)).results)
+            toastProvider.showToast("fetch list success")
         }
     }
 
